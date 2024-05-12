@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+autoload -U +X compinit && compinit
+
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 
 antidote load
@@ -13,6 +15,8 @@ antidote load
 bindkey '^[[A' history-substring-search-up # or '\eOA'
 bindkey '^[[B' history-substring-search-down # or '\eOB'
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
+
+bindkey '^I' autosuggest-accept
 
 alias ll='ls -lG'
 
