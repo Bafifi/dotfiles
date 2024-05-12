@@ -26,5 +26,11 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 eval "$(zoxide init zsh)"
 
+function runSubCmd() {
+  for d in ./*/ ; do /bin/zsh -c "(cd "$d" && "$@")"; done
+}
+
+git-recursive() { find -H . -name .git -type d -execdir pwd \; -execdir git "$@" \; -exec printf "\n" \; }
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
