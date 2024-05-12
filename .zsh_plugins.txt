@@ -1,0 +1,6 @@
+romkatv/powerlevel10k
+zsh-users/zsh-autosuggestions
+z-shell/F-Sy-H
+zsh-users/zsh-completions
+zsh-users/zsh-history-substring-search
+scmbreeze/scm_breeze
