@@ -23,8 +23,8 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
 
 # zsh-history-substring-search configuration
 bindkey '^[[A' history-substring-search-up # or '\eOA'
@@ -47,6 +47,7 @@ export PATH=$PATH:$GOPATH/bin
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 eval "$(zoxide init zsh)"
+eval "$(fzf --zsh)"
 
 function runSubCmd() {
   for d in ./*/ ; do /bin/zsh -c "(cd "$d" && "$@")"; done
