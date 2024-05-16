@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-autoload -U +X compinit && compinit
+autoload -Ud +X compinit && compinit
 
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 
@@ -16,7 +16,9 @@ bindkey '^[[A' history-substring-search-up # or '\eOA'
 bindkey '^[[B' history-substring-search-down # or '\eOB'
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
 
-bindkey '^I' autosuggest-accept
+#bindkey '^I' autosuggest-accept
+bindkey              '^I'         menu-complete
+bindkey "$terminfo[kcbt]" reverse-menu-complete
 
 alias ll='ls -lG'
 
