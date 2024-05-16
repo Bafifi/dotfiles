@@ -5,3 +5,4 @@ zsh-users/zsh-completions
 zsh-users/zsh-history-substring-search
 scmbreeze/scm_breeze
 marlonrichert/zsh-autocomplete
+Aloxaf/fzf-tab
