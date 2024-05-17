@@ -1,7 +1,7 @@
 live_config_reload = true
 
 [window]
-decorations = "Buttonless"
+decorations = "Full"
 padding.x = 5
 padding.y = 10
 
@@ -88,3 +88,13 @@ color = "#fab387"
 [[colors.indexed_colors]]
 index = 17
 color = "#f5e0dc"
+
+[keyboard]
+bindings = [
+  { key = "Right", mods = "Alt", chars = "\u001BF" }, # Forward word
+  { key = "Left",  mods = "Alt", chars = "\u001BB" }, # Back word
+  { key = "Left",  mods = "Command", chars = "\u001b[H", mode = "AppCursor" }, # Home
+  { key = "Right", mods = "Command", chars = "\u001b[F", mode = "AppCursor" }, # End
+  { key = "Back",  mods = "Command", chars = "\u0015" }, # Delete line
+  { key = "Back", mods = "Alt", chars = "\u0017" }, # Delete word
+]
