@@ -1,9 +1,5 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+eval "$(starship init zsh)"
 
 autoload -Ud +X compinit && compinit
 
@@ -37,6 +33,7 @@ bindkey "$terminfo[kcbt]" reverse-menu-complete
 alias ll='ls -lG'
 alias lla='ls -lG -a'
 alias ls='ls --color'
+alias vim='nvim'
 
 PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
@@ -54,6 +51,3 @@ function runSubCmd() {
 }
 
 git-recursive() { find -H . -name .git -type d -execdir pwd \; -execdir git "$@" \; -exec printf "\n" \; }
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
