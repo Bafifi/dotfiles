@@ -189,5 +189,11 @@ require("lazy").setup({ -- Plugin specifications
       vim.g.loaded_netrw = 1
       vim.g.loaded_netrwPlugin = 1
     end,
+  },
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require('config.plugins.gitsigns').setup()
+    end
   }
 })

@@ -19,6 +19,7 @@ cmd('filetype plugin on')
 cmd('filetype indent on')
 
 -- General settings
+opt.relativenumber = true
 opt.number = true
 opt.cursorline = false
 opt.incsearch = true
@@ -42,6 +43,7 @@ opt.termguicolors = true
 opt.updatetime = 250
 opt.timeoutlen = 300
 opt.completeopt = 'menuone,noselect'
+opt.signcolumn = "yes"
 
 -- Set up cursorline autocommands
 local cursorline_group = api.nvim_create_augroup("CursorLineNrHighlight", { clear = true })
