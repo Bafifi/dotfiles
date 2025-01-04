@@ -17,13 +17,6 @@ map('n', '<leader>er', '<cmd>NvimTreeRefresh<cr>', { desc = 'Refresh Explorer' }
 
 -- GitSigns mappings
 map('n', '<leader>gb', '<cmd>Gitsigns toggle_current_line_blame<cr>', { desc = 'Toggle line blame' })
-map('n', '<leader>gh', '<cmd>Gitsigns preview_hunk<cr>', { desc = 'Preview hunk' })
-map('n', '<leader>gr', '<cmd>Gitsigns reset_hunk<cr>', { desc = 'Reset hunk' })
-map('n', '<leader>gp', '<cmd>Gitsigns prev_hunk<cr>', { desc = 'Previous hunk' })
-map('n', '<leader>gn', '<cmd>Gitsigns next_hunk<cr>', { desc = 'Next hunk' })
-map('n', '<leader>gs', '<cmd>Gitsigns stage_hunk<cr>', { desc = 'Stage hunk' })
-map('n', '<leader>gu', '<cmd>Gitsigns undo_stage_hunk<cr>', { desc = 'Undo stage hunk' })
-map('n', '<leader>gd', '<cmd>Gitsigns diffthis<cr>', { desc = 'Diff this' })
 
 -- LSP mappings (will be set up in lsp config)
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', { desc = 'Go to definition' })

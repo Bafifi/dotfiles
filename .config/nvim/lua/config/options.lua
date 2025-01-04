@@ -8,7 +8,7 @@ g.mapleader = " "
 g.maplocalleader = " "
 
 -- Set font
-opt.guifont = "JetBrainsMono Nerd Font Mono:h12"
+opt.guifont = "JetBrainsMono Nerd Font Mono:h13"
 opt.termguicolors = true
 
 

@@ -1,23 +1,6 @@
 local M = {}
 
 function M.setup()
-    -- Set highlights
-    vim.api.nvim_set_hl(0, 'GitSignsAdd', { fg = '#00FF00' }) -- Green for newlines
-    vim.api.nvim_set_hl(0, 'GitSignsAddNr', { fg = '#00FF00' })
-    vim.api.nvim_set_hl(0, 'GitSignsAddLn', { fg = '#00FF00' })
-    vim.api.nvim_set_hl(0, 'GitSignsChange', { fg = '#FFFF00' }) -- Yellow for changes
-    vim.api.nvim_set_hl(0, 'GitSignsChangeNr', { fg = '#FFFF00' })
-    vim.api.nvim_set_hl(0, 'GitSignsChangeLn', { fg = '#FFFF00' })
-    vim.api.nvim_set_hl(0, 'GitSignsChangedelete', { fg = '#FFFF00' })
-    vim.api.nvim_set_hl(0, 'GitSignsChangedeleteNr', { fg = '#FFFF00' })
-    vim.api.nvim_set_hl(0, 'GitSignsChangedeleteLn', { fg = '#FFFF00' })
-    vim.api.nvim_set_hl(0, 'GitSignsDelete', { fg = '#FF0000' }) -- Red for deletes
-    vim.api.nvim_set_hl(0, 'GitSignsDeleteNr', { fg = '#FF0000' })
-    vim.api.nvim_set_hl(0, 'GitSignsDeleteLn', { fg = '#FF0000' })
-    vim.api.nvim_set_hl(0, 'GitSignsTopdelete', { fg = '#FF0000' })
-    vim.api.nvim_set_hl(0, 'GitSignsTopdeleteNr', { fg = '#FF0000' })
-    vim.api.nvim_set_hl(0, 'GitSignsTopdeleteLn', { fg = '#FF0000' })
-
     require('gitsigns').setup {
         signs = {
             add = { text = '│' },
@@ -35,7 +18,7 @@ function M.setup()
             follow_files = true
         },
         attach_to_untracked = true,
-        current_line_blame = true, -- Enable current line blame
+        current_line_blame = false,
         current_line_blame_opts = {
             virt_text = true,
             virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'

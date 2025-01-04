@@ -47,9 +47,7 @@ require("lazy").setup({ -- Plugin specifications
   },
   {
     "L3MON4D3/LuaSnip",
-    -- follow latest release.
-    version = "v2.*", -- Replace "*" by the latest version number
-    -- install jsregexp (optional!).
+    version = "v2.*",
     build = "make install_jsregexp",
     dependencies = { "rafamadriz/friendly-snippets" },
     config = function()
@@ -67,7 +65,7 @@ require("lazy").setup({ -- Plugin specifications
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons" -- Add this for better icons
+      "nvim-tree/nvim-web-devicons"
     },
     config = function()
       require("config.plugins.telescope").setup()
@@ -95,78 +93,14 @@ require("lazy").setup({ -- Plugin specifications
     "windwp/nvim-autopairs",
     event = "InsertEnter",
     config = function()
-      require("nvim-autopairs").setup({
-        check_ts = true,                      -- Enable treesitter
-        ts_config = {
-          lua = { 'string' },                 -- Don't add pairs in lua string treesitter nodes
-          javascript = { 'template_string' }, -- Don't add pairs in javascript template_string
-        },
-        disable_filetype = { "TelescopePrompt" },
-        enable_check_bracket_line = true, -- Don't add pairs if it already has a close pair in the same line
-        ignored_next_char = "[%w%.]",     -- Don't add pairs if the next char is alphanumeric
-        enable_afterquote = true,         -- add bracket pairs after quote
-        enable_moveright = true,          -- enable moveright
-        enable_bracket_in_quote = true,
-        fast_wrap = {
-          map = '<M-e>', -- Alt+e to fast wrap the pair
-          chars = { '{', '[', '(', '"', "'" },
-          pattern = [=[[%'%"%>%]%)%}%,]]=],
-          end_key = '$',
-          keys = 'qwertyuiopzxcvbnmasdfghjkl',
-          check_comma = true,
-          manual_position = true,
-          highlight = 'Search',
-          highlight_grey = 'Comment'
-        },
-      })
-
-      -- Integration with nvim-cmp
-      local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-      local cmp = require('cmp')
-      cmp.event:on(
-        'confirm_done',
-        cmp_autopairs.on_confirm_done()
-      )
+      require("config.plugins.autopairs").setup()
     end
   },
   {
     "ray-x/lsp_signature.nvim",
     event = "VeryLazy",
     config = function()
-      require("lsp_signature").setup({
-        bind = true,
-        handler_opts = {
-          border = "rounded"
-        },
-        hint_enable = true, -- Shows parameter hints inline
-        hint_prefix = "🔍 ", -- Prefix for parameter hints
-        hint_scheme = "String", -- Highlight group for hints
-        hi_parameter = "Search", -- Highlight group for current parameter
-        max_height = 12, -- Max height of signature floating window
-        max_width = 120, -- Max width of signature floating window
-        wrap = true, -- Wrap long signatures
-        floating_window = true, -- Show floating window for signatures
-        floating_window_above_cur_line = true, -- Try to place window above cursor line
-        toggle_key = "<C-k>", -- Toggle signature window with Ctrl-k
-      })
-    end
-  },
-  {
-    'numToStr/Comment.nvim',
-    event = "VeryLazy",
-    config = function()
-      require('Comment').setup({
-        -- Enable line and block comment toggling
-        toggler = {
-          line = 'gcc',  -- Line-comment toggle keymap
-          block = 'gbc', -- Block-comment toggle keymap
-        },
-        -- Enable operator-pending mappings
-        opleader = {
-          line = 'gc',  -- Line-comment keymap
-          block = 'gb', -- Block-comment keymap
-        },
-      })
+      require("config.plugins.lsp-signature").setup()
     end
   },
   {
