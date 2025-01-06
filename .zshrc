@@ -34,6 +34,7 @@ alias ll='ls -lG'
 alias lla='ls -lG -a'
 alias ls='ls --color'
 alias vim='nvim'
+alias clear='echo -e "\e[H\e[2J"'
 
 PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
