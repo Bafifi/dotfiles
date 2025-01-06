@@ -129,5 +129,18 @@ require("lazy").setup({ -- Plugin specifications
     config = function()
       require('config.plugins.gitsigns').setup()
     end
+  },
+  {
+    "f-person/git-blame.nvim",
+    config = function()
+      vim.g.gitblame_enabled = false
+    end
+  },
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+      require("nvim-surround").setup({})
+    end
   }
 })

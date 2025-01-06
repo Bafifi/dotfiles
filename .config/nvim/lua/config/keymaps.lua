@@ -11,12 +11,14 @@ map('n', '<leader>fb', '<cmd>Telescope buffers<cr>', { desc = 'Buffers' })
 map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', { desc = 'Help tags' })
 
 -- File explorer mappings
-map('n', '<leader>ee', '<cmd>NvimTreeToggle<cr>', { desc = 'Toggle Explorer' })
-map('n', '<leader>ef', '<cmd>NvimTreeFocus<cr>', { desc = 'Focus Explorer' })
-map('n', '<leader>er', '<cmd>NvimTreeRefresh<cr>', { desc = 'Refresh Explorer' })
+map('n', '<leader>e', '<cmd>NvimTreeToggle<cr>', { desc = 'Toggle Explorer' })
 
--- GitSigns mappings
+-- Git mappings
 map('n', '<leader>gb', '<cmd>Gitsigns toggle_current_line_blame<cr>', { desc = 'Toggle line blame' })
+map('n', '<leader>go', '<cmd>GitBlameOpenCommitURL<cr>', { desc = 'Open commit URL' })
+map('n', '<leader>gf', '<cmd>GitBlameOpenFileURL<cr>', { desc = 'Open file URL' })
+map('n', '<leader>gc', '<cmd>GitBlameCopySHA<cr>', { desc = 'Copy SHA' })
+map('n', '<leader>gu', '<cmd>GitBlameCopyFileURL<cr>', { desc = 'Copy file URL' })
 
 -- LSP mappings (will be set up in lsp config)
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', { desc = 'Go to definition' })
@@ -50,14 +52,11 @@ map('n', '<C-p>', '<cmd>Telescope commands<cr>', { desc = 'Command Palette' })
 map('n', '<leader>/', 'gcc', { desc = 'Toggle comment', remap = true }) -- leader + / for normal mode
 map('v', '<leader>/', 'gc', { desc = 'Toggle comment', remap = true })  -- leader + / for visual mode
 
--- Auto wrap mappings
-map('v', '<leader>w"', 'c""<Esc>P', { desc = 'Wrap with double quotes' })
-map('v', "<leader>w'", "c''<Esc>P", { desc = 'Wrap with single quotes' })
-map('v', '<leader>w`', 'c``<Esc>P', { desc = 'Wrap with backticks' })
-map('v', '<leader>w)', 'c()<Esc>P', { desc = 'Wrap with parentheses' })
-map('v', '<leader>w]', 'c[]<Esc>P', { desc = 'Wrap with brackets' })
-map('v', '<leader>w}', 'c{}<Esc>P', { desc = 'Wrap with braces' })
-map('v', '<leader>w>', 'c<><Esc>P', { desc = 'Wrap with angle brackets' })
+-- Surround mappings
+map('n', 'ys', '<cmd>lua require"nvim-surround".normal_surround()<cr>', { desc = 'Surround' })
+map('v', 'S', '<cmd>lua require"nvim-surround".visual_surround()<cr>', { desc = 'Surround' })
+map('n', 'ds', '<cmd>lua require"nvim-surround".delete_surround()<cr>', { desc = 'Delete Surround' })
+map('n', 'cs', '<cmd>lua require"nvim-surround".change_surround()<cr>', { desc = 'Change Surround' })
 
 -- Diagnostic keymaps
 map('n', '<leader>dd', vim.diagnostic.open_float, { desc = 'Show diagnostic error' })
