@@ -31,6 +31,12 @@ map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', { desc = 'Code 
 map('n', '<leader>[', '<C-o>', { desc = 'Jump back' })
 map('n', '<leader>]', '<C-i>', { desc = 'Jump forward' })
 
+-- Navigation between splits/buffers
+map('n', '<C-h>', '<C-w>h', { desc = 'Move to left split' })
+map('n', '<C-j>', '<C-w>j', { desc = 'Move to below split' })
+map('n', '<C-k>', '<C-w>k', { desc = 'Move to above split' })
+map('n', '<C-l>', '<C-w>l', { desc = 'Move to right split' })
+
 -- Search mappings
 map('n', '<leader>nh', ':nohlsearch<CR>', { desc = 'Clear search highlights' })
 map('n', '<leader>*', '*``', { desc = 'Search word under cursor' })
@@ -57,6 +63,9 @@ map('n', 'ys', '<cmd>lua require"nvim-surround".normal_surround()<cr>', { desc =
 map('v', 'S', '<cmd>lua require"nvim-surround".visual_surround()<cr>', { desc = 'Surround' })
 map('n', 'ds', '<cmd>lua require"nvim-surround".delete_surround()<cr>', { desc = 'Delete Surround' })
 map('n', 'cs', '<cmd>lua require"nvim-surround".change_surround()<cr>', { desc = 'Change Surround' })
+
+-- UndoTree mappings
+map('n', '<leader>u', '<cmd>UndotreeToggle<cr>', { desc = 'Toggle UndoTree' })
 
 -- Diagnostic keymaps
 map('n', '<leader>dd', vim.diagnostic.open_float, { desc = 'Show diagnostic error' })

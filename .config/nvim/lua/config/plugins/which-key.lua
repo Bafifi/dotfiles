@@ -52,10 +52,15 @@ function M.setup()
         { "<leader>gf", "<cmd>GitBlameOpenFileURL<cr>",                 desc = "Open file URL" },
         { "<leader>gc", "<cmd>GitBlameCopySHA<cr>",                     desc = "Copy SHA" },
         { "<leader>gu", "<cmd>GitBlameCopyFileURL<cr>",                 desc = "Copy file URL" },
+        { "<leader>u",  "<cmd>UndotreeToggle<cr>",                      desc = "Toggle UndoTree" },
         { "ys",         desc = "Surround" },
         { "S",          desc = "Surround",                              mode = "v" },
         { "ds",         desc = "Delete Surround" },
         { "cs",         desc = "Change Surround" },
+        { "<C-h>",      "<C-w>h",                                       desc = "Move to left split" },
+        { "<C-j>",      "<C-w>j",                                       desc = "Move to below split" },
+        { "<C-k>",      "<C-w>k",                                       desc = "Move to above split" },
+        { "<C-l>",      "<C-w>l",                                       desc = "Move to right split" },
     })
 end
 
