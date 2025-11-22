@@ -1,0 +1,71 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "ui_font_weight": 500.0,
+  "buffer_line_height": "comfortable",
+  "buffer_font_weight": 500.0,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "bottom_dock_layout": "contained",
+  "tabs": {
+    "git_status": false
+  },
+  "tab_bar": {
+    "show_nav_history_buttons": false,
+    "show": true
+  },
+  "title_bar": {
+    "show_menus": false,
+    "show_sign_in": false,
+    "show_user_picture": false,
+    "show_onboarding_banner": true,
+    "show_project_items": true,
+    "show_branch_name": true,
+    "show_branch_icon": true
+  },
+  "debugger": {
+    "button": true
+  },
+  "search": {
+    "button": false
+  },
+  "diagnostics": {
+    "button": true
+  },
+  "project_panel": {
+    "button": true
+  },
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 500
+    }
+  },
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "base_keymap": "JetBrains",
+  "agent": {
+    "default_profile": "write",
+    "default_model": {
+      "provider": "openrouter",
+      "model": "google/gemini-2.5-flash"
+    }
+  },
+  "icon_theme": "Catppuccin Macchiato",
+  "ui_font_size": 15.0,
+  "buffer_font_size": 13.0,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "terminal": {
+    "font_family": "JetBrainsMono Nerd Font Mono",
+    "line_height": {
+      "custom": 1.35
+    }
+  },
+  "theme": "Catppuccin Macchiato"
+}
