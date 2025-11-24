@@ -91,7 +91,7 @@ format = '[ $user ]($style)'
 
 [directory]
 style = "fg:mantle bg:peach"
-format = "[ ﱮ $path ]($style)"
+format = "[ 󰉋 $path ]($style)"
 
 [directory.substitutions]
 "Documents" = "󰈙 "

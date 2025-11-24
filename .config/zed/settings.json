@@ -57,7 +57,7 @@
       "model": "google/gemini-2.5-flash"
     }
   },
-  "icon_theme": "Catppuccin Macchiato",
+  "icon_theme": "Catppuccin Mocha",
   "ui_font_size": 15.0,
   "buffer_font_size": 13.0,
   "buffer_font_family": "JetBrainsMono Nerd Font",
@@ -67,5 +67,5 @@
       "custom": 1.35
     }
   },
-  "theme": "Catppuccin Macchiato"
+  "theme": "Catppuccin Mocha"
 }

@@ -2,3 +2,4 @@
 Brewfile
 README.md
 .gitignore
+./.config/zed/prompts
